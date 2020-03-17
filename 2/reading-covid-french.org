@@ -1,0 +1,57 @@
+#+TITLE: Unicodeには-に見える記号が多すぎる(twitter)
+#+AUTHOR: Yoshitaka TAKEUCHI
+#+FILETAGS: :dialy:
+#+DESCRIPTION: Unicodeには-(横棒)に見える記号が多すぎます。検索するときや入力するときにこの-が―や―と同じかどうか区別が付く人はそう多くはないでしょう。twitterではどのように処理されるのか調べて見ます。
+
+#+OPTIONS: :html-container section
+#+OPTIONS: num:nil
+#+OPTIONS: ^:{}
+
+* Unicodeには-に見える記号が多すぎる(twitter)
+Shift-JISやEUC-JP,JIS,UTF-8などが乱立し、多くのエンジニアを未だに悩ます要因になってたりする文字コード。
+こんなツイートを見ると一言言ってくるオタクが高専にはいますね。
+
+Olivier Véran
+@olivierveran
+·
+3月14日
+⚠️ #COVIDー19 | La prise d'anti-inflammatoires (ibuprofène, cortisone, ...) pourrait être un facteur d'aggravation de l’infection. En cas de fièvre, prenez du paracétamol. 
+Si vous êtes déjà sous anti-inflammatoires ou en cas de doute, demandez conseil à votre médecin.
+
+そう。このツイートにくっついてるハッシュタグ #COVIDー19 のDと1を繋ぐ棒はまるで日本語の延し棒のようなフォントで描画されています。
+こんなツイートを日本でしたらフランス語で「コヴォッドーナインティーン」って発音するのか!?と高専生を始めとする延し棒警察各位からのクレームの電話が止らなくなるでしょう。(こない)
+
+しかし、Dと1の間にある棒、全角の延し棒とか言うと日本人には伝わりますが、他の国には無いのでしょうか。
+
+延し棒やハイフンに見える記号はUTF-8にはこんなにあります。
+
+| UTF-8コードポイント | 記号 | 名前                                    |
+|---------------------+------+-----------------------------------------|
+| U+2015              | ―   | Horizontal Bar                          |
+| U+002D              | -    | Hyphen-Minus                            |
+| U+FE63              | ﹣   | Small Hyphen-Minus                      |
+| U+FF0D              | －   | Fullwidth Hyphen-Minus                  |
+| U+00AD              |      | Soft Hyphen                             |
+| U+2010              | ‐   | Hyphen                                  |
+| U+2011              | ‑    | Non-Breaking Hyphen                     |
+| U+2043              | ⁃    | Hyphen Bullet                           |
+| U+02D7              | ˗    | Modifier Letter Minus Sign              |
+| U+2212              | −   | Minus Sign                              |
+| U+29FF              | ⧿    | Miny                                    |
+| U+2796              | ➖   | Heavy Minus Sign                        |
+|                     |      |                                         |
+| U+2012              | ‒    | Figure Dash                             |
+| U+2013              | –    | En Dash                                 |
+| U+2014              | —   | Em Dash                                 |
+| U+2015              | ―   | Horizontal Bar                          |
+| U+2E3A              | ⸺    | Two-Em Dash                             |
+| U+2E3B              | ⸻    | Three-Em Dash                           |
+| U+FE58              | ﹘   | Small Em Dash                           |
+| U+2500              | ─   | Box Drawings Light Horizontal           |
+| U+2501              | ━   | Box Drawings Heavy Horizontal           |
+| U+2574              | ╴    | Box Drawings Light Left                 |
+| U+2576              | ╶    | Box Drawings Light Right                |
+| U+2578              | ╸    | Box Drawings Heavy Left                 |
+| U+257A              | ╺    | Box Drawings Heavy Right                |
+| U+257C              | ╼    | Box Drawings Light Left and Heavy Right |
+| U+257E              | ╾    | Box Drawings Heavy Left and Light Right |
