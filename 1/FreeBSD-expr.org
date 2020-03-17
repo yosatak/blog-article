@@ -1,0 +1,25 @@
+#+TITLE: FreeBSDのexpr(1)
+#+AUTHOR: Yoshitaka TAKEUCHI
+#+FILETAGS: :dialy:
+#+DESCRIPTION: FreeBSDのexprには-eのオプションを受けつけます。1項目が負の数だと、オプションとしてパースされてしまい正常に処理が完了しません。
+
+#+OPTIONS: :html-container section
+#+OPTIONS: num:nil
+#+OPTIONS: ^:{}
+
+* FreeBSDのexprには-eオプションがある。
+このブログは可搬性を意識してshellscriptで作ってみたのですが、デプロイするときにexprのエラーで動きませんでした。
+
+OSは開発環境がOpenBSD,本番環境がFreeBSDなのですが、FreeBSDのexprは1項目に負の数が渡されるとオプションと勘違いしてエラーになってしまいます。
+
+[[https://www.unix.com/man-page/freebsd/1/expr/][expr(1) freebsd man page]]
+
+#+BEGIN_SRC bash
+$ expr -1 + 1
+expr: illegal option -- 1
+expr: usage: expr [-e] expression
+#+END_SRC
+
+* eオプション
+manを読むとeオプションは後方互換性のためのflagらしいです。
+
